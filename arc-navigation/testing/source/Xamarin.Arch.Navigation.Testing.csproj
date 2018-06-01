@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('..\..\..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,6 +14,21 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidClassParser>class-parse</AndroidClassParser>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Xamarin.Android.Arch.Navigation.Testing</PackageId>
+    <PackageVersion>1.0.0-alpha01</PackageVersion>
+    <PackageReleaseNotes>1.0.0-alpha01</PackageReleaseNotes>
+    <Authors>Xamarin Inc.</Authors>
+    <Owners>Xamarin Inc.</Owners>
+    <Description>Android Architecture Navigation - Testing C# bindings for Xamarin</Description>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Title>Xamarin Android Architecture Navigation - Testing</Title>
+    <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=865327</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/xamarin/AndroidSupportComponents/master/icons/arch-core-common_128x128.png</PackageIconUrl>
+    <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=865385</PackageLicenseUrl>
+    <PackageTags>xamarin android arch navigation testing</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +64,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\EnumFields.xml" />
@@ -58,4 +75,5 @@
     <LibraryProjectZip Include="Jars\navigation-testing-1.0.0-alpha01.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+  <Import Project="..\..\..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('..\..\..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
 </Project>
